@@ -1,8 +1,8 @@
 {
-  "name": "kosv/yii2-grid-roweditable",
+  "name": "ludota/yii2-grid-roweditable",
   "description": "Extension for editing rows for yii2 grid widget.",
   "keywords": ["yii2", "grid", "row", "editor", "extension", "widget", "kosv"],
-  "homepage": "https://github.com/Konstantin-Vl/yii2-grid-rowEditable.git",
+  "homepage": "https://github.com/Ludota/yii2-grid-rowEditable.git",
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "version": "1.0.2",
