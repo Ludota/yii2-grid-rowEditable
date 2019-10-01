@@ -70,6 +70,11 @@ class EditConfig extends BaseObject implements EditConfigInterface
     public $saveButton;
 
     /**
+     * @var string
+     */
+    public $massiveChangeControl;
+
+    /**
      * @var bool
      *
      * TODO: In the future version
@@ -127,6 +132,10 @@ HTML;
         if (!$this->saveButton) {
             $this->saveButton = '.' . EditConfigInterface::DEFAULT_CLASS_SAVE_BTN;
         }
+
+        if (!$this->massiveChangeControl) {
+            $this->massiveChangeControl = '.' . EditConfigInterface::DEFAULT_CLASS_MASSIVE_CHANGE_CONTROL;
+        }
     }
 
     /**
@@ -163,7 +172,7 @@ HTML;
         return [
             'prefix', 'gridCssClass', 'selectMode',
             'saveAction', 'saveAjax', 'saveMethod',
-            'saveButton',
+            'saveButton', 'massiveChangeControl',
         ];
     }
 

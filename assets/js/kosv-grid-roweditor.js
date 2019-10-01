@@ -20,6 +20,7 @@ if (typeof kosv == 'undefined' || !kosv) {
             saveAction: location.pathname,
             saveAjax: false,
             saveButton: '.' + this.p('save-btn'),
+            massiveChangeControl: '.' + this.p('massive-change-control'),
             saveMethod: 'POST',
             selectMode: this.SELECT_MODE_CHECKBOX,
             selectParams: {},
@@ -63,8 +64,8 @@ if (typeof kosv == 'undefined' || !kosv) {
 
 
 
-    proto.getSelectedInputs = function () {
-        var selector = '.' + this.inputWrapHtmlClass + ' :input';
+    proto.getSelectedInputs = function (toFind = ':input') {
+        var selector = '.' + this.inputWrapHtmlClass + ' ' + toFind;
         return this.getSelectedRows().find(selector);
     };
 
@@ -124,11 +125,11 @@ if (typeof kosv == 'undefined' || !kosv) {
     };
 
 
-    proto.displaySaveButton = function () {
+    proto.displayChangeControl = function () {
         if (this.getSelectedInputs().length) {
-            $(this.saveButton).show();
+            $(this.saveButton, this.massiveChangeControl).show();
         } else {
-            $(this.saveButton).hide();
+            $(this.saveButton, this.massiveChangeControl).hide();
         }
     };
 
@@ -144,7 +145,7 @@ if (typeof kosv == 'undefined' || !kosv) {
 
         self.$grid.on(self.p('rowSelected'), function (e, $row, state) {
             self.selectRow($row, state);
-            self.displaySaveButton();
+            self.displayChangeControl();
         });
 
         if (self.selectMode & self.SELECT_MODE_CHECKBOX) {
@@ -189,6 +190,14 @@ if (typeof kosv == 'undefined' || !kosv) {
         if (self.saveButton) {
             $(self.saveButton).on('click', function () {
                 self.$grid.trigger(self.p('submitSaveForm'));
+            });
+        }
+
+        if (self.massiveChangeControl) {
+            $(self.massiveChangeControl).on('change', function () {
+                var toChangeControl = $(this).data('control');
+                var new_value = $(this).val();
+                self.getSelectedInputs(toChangeControl).val(new_value);
             });
         }
     };

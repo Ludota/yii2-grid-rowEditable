@@ -169,6 +169,7 @@ trait EditableGridTrait
             'prefix' => $this->rowEditConfig->prefix,
             'saveAction' => $this->rowEditConfig->saveAction,
             'saveButton' => $this->rowEditConfig->saveButton,
+            'massiveChangeControl' => $this->rowEditConfig->massiveChangeControl,
             'saveMethod' => $this->rowEditConfig->saveMethod,
             'selectMode' => $this->rowEditConfig->selectMode,
             'selectParams' => $this->getRowEditorSelectParams(),

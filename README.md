@@ -248,7 +248,7 @@ echo YourGridView::widget([
 ```
 
 Список параметров из `commonEditParams`, которые нельзя предопределить в столбце:
-`prefix`, `gridCssClass`, `selectMode`, `saveAction`, `saveMethod`, `saveButton`.
+`prefix`, `gridCssClass`, `selectMode`, `saveAction`, `saveMethod`, `saveButton`, `massiveChangeControl`.
 
 
 ## Описание параметров конфигурации
@@ -325,6 +325,13 @@ echo YourGridView::widget([
 # - Значение по умолчанию '.gre-save-btn'
 # - Нельзя предопределить в столбце
 'saveButton' => '.gre-save-btn',
+
+# Класс управляющих элементов для массового изменения значений в таблице
+# - Необязательный параметр
+# - Тип string. jQuery селектор
+# - Значение по умолчанию '.gre-massive-change-control'
+# - Нельзя предопределить в столбце
+'massiveChangeControl' => '.gre-massive-change-control',
 
 # HTTP метод с помощью которого будет выполнятся сохранение формы
 # - Необязательный параметр
