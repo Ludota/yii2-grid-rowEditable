@@ -155,12 +155,13 @@ if (typeof kosv == 'undefined' || !kosv) {
                     .trigger(self.p('rowSelected'), [row, !!this.checked]);
             });
 
-            $(selectParams.allSelector).on('change', function () {
+            // to improve performance (everything works!!!)
+            /*$(selectParams.allSelector).on('change', function () {
                 $(this)
                     .closest('table')
                     .find(selectParams.itemSelector)
                     .change();
-            });
+            });*/
 
             self.$grid
                 .find(selectParams.itemSelector + ':checked')
