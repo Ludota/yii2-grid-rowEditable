@@ -127,9 +127,9 @@ if (typeof kosv == 'undefined' || !kosv) {
 
     proto.displayChangeControl = function () {
         if (this.getSelectedInputs().length) {
-            $(this.saveButton, this.massiveChangeControl).show();
+            $(this.saveButton + ', ' + this.massiveChangeControl).show();
         } else {
-            $(this.saveButton, this.massiveChangeControl).hide();
+            $(this.saveButton + ', ' + this.massiveChangeControl).hide();
         }
     };
 
